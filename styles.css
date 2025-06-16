@@ -1,0 +1,127 @@
+* {
+    font-family: "Helvetica", "Arial", "system-ui", sans-serif;
+    box-sizing: border-box;
+}
+
+body {
+    --bg: #222;
+    --text: #fff;
+
+    margin: 0;
+
+    background-color: var(--bg);
+    color: var(--text);
+}
+
+.content {
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+
+    background-color: var(--bg);
+    margin: 2rem auto;
+
+    padding: 1rem;
+    max-width: calc(512px + 2rem);
+
+    @media screen and (min-width: 720px) {
+        box-shadow: 0 0.5rem 0.5rem rgba(0, 0, 0, 0.15);
+        border-radius: 0.5rem;
+    }
+}
+
+.content>h2 {
+    text-align: center;
+    margin: 0;
+}
+
+.content-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.img-container {
+    --container-bg: #1a1a1a;
+
+    background-color: var(--container-bg);
+    border-radius: 0.5rem;
+}
+
+.img-container > img {
+    border-radius: 0.5rem;
+}
+
+.content-box > .img-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    max-width: 512px;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+}
+
+.content-box > .img-container img {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    display: block;
+    object-fit: contain;
+}
+
+.prev-imgs {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+
+    gap: 0.5rem;
+    width: 100%;
+}
+
+.prev-imgs > .img-container {
+    --width: calc((512px - 4 * 0.5rem) / 5);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-grow: 1;
+    flex-shrink: 0;
+    max-width: var(--width);
+    aspect-ratio: 1 / 1;
+}
+
+.prev-imgs > .img-container img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: contain;
+}
+
+.btn {
+    --btn-bg: #2a2a2a;
+    --btn-text: #fff;
+
+    cursor: pointer;
+
+    background-color: var(--btn-bg);
+    color: var(--btn-text);
+    border: 1px solid var(--btn-bg);
+    border-radius: 0.5rem;
+
+    font-size: inherit;
+
+    padding: 1rem;
+
+    transition: all ease-in-out 150ms;
+}
+
+.btn:hover {
+    --btn-bg: #333;
+}
